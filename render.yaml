@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: fifa-player-analysis
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: TABLEAU_VIEW_URL
+        value: https://public.tableau.com/views/FIFAPlayerAnalysis/Dashboard1
